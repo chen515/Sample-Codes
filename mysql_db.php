@@ -1,5 +1,6 @@
 <?php
 /**This class is used to connect to MySQL database,query data and handle errors.*/
+
 class MySqlDB
 {
   private $link;
