@@ -1,5 +1,5 @@
 <?php
-//use curl to send json data
+//use curl to send json data 
 
 $ch = curl_init();
 $url = "http://www.test.com/records/api_submit";
