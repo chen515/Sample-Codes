@@ -1,0 +1,13 @@
+Instructions:
+The system is used to track conference attendee. If the attendee has not checked in, it will log his information into a file (or database). For demonstration purpose, a file is used.
+If the attendee has chekced in, it will say that he is already registered.
+
+The system uses jquery to communicate with the backend PHP file and update the frontend HTML view.
+
+1. record.txt has to be existed, readable and writable (run chmod 777 record.txt on server);
+
+2. four files are included in the ZIP package. They are:
+  check_file.php
+	index.html
+	jquery-1.7.2.min.js
+	record.txt
