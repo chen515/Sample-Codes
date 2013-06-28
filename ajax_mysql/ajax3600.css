@@ -1,0 +1,20 @@
+tr:nth-child(odd)  	{ background-color:#eee; }
+tr:nth-child(even)		{ background-color:#fff; }
+p {background-color:#e0ffff;}
+
+.head{
+	color: #fff;
+	background-color:#2E9AFE;
+}
+
+.myTotal {
+	font-family: Comic Sans;
+        color: #2E9AFE;
+	background-color:#fff;
+        font-size: 40px;
+        text-align: center;
+}
+
+.title {
+	background-color:#fff;
+}
