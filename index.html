@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<head>
+<title>Conference Attendee Trcking System</title>
+<script src="jquery-1.7.2.min.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+var alpha = "abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+function charsNotInBag(s, bag)
+{   
+  var i;
+    // Search through string's characters one by one.
+    for (i = 0; i < s.length; i++)
+    {   
+        var c = s.charAt(i);
+        if (bag.indexOf(c) == -1)
+		{	
+			alert("Please enter your name in letters.");
+			return false;
+		}
+    }
+
+    return true;
+}
+
+$(document).ready(function(){
+	$("#trackForm").submit(function(e){     
+	    e.preventDefault();   
+
+		var name = $("#name").val();
+		if(!charsNotInBag(name, alpha))
+		{
+			$('#name').focus();
+			return false;
+		}
+		
+		if ($.trim($("#name").val()).length < 1) {
+				alert("Please enter an valid name.");
+				$('#name').focus();
+				return false;
+		}	
+			
+	
+		if ($.trim($("#address").val()).length < 3) {
+				alert("Please enter an valid address.");
+				$('#address').focus();
+				return false;
+		}	
+
+			
+		$.post(
+			"check_file.php", 
+			$("#trackForm").serialize(),
+			function(data){
+				$("#trk_message").html("<p>" + data + "</p>");
+			}
+		);
+	});
+});
+</script>
+</head>
+
+<body>
+
+<form id="trackForm">
+
+<legend><h2>Conference Attendee Trcking System</h2></legend>
+
+<p><label for="name1">Name:</label><br />
+
+<input id="name" type="text" name="name"  value=""/></p>
+
+<p><label for="address1">Address:</label><br />
+
+<input id="address" type="text" name="address" value=""/></p>
+
+<p><input type="submit" value="Submit" /></p>
+
+</form>
+<div id="trk_message"></div>
+ 
+</body>
+</html>
